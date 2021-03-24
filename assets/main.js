@@ -46,7 +46,7 @@ var app = new Vue({
                 }else {
                     this.index += 1;
                 }
-            }.bind(this),1000);
+            }.bind(this),3000);
         },
 
         autoPlayOff: function() {
