@@ -47,20 +47,23 @@
                     <ol class="carousel-indicators">
                         <li v-for="lineNavImg in a_IMG.length"
                         :class="(lineNavImg -1 == index) ? 'active' : '' "
-                        @click="dotSelection(dot - 1)"></li>
+                        @click="lineSelected(lineNavImg -1)"></li>
                     </ol>
 
-                    <div class="autoPlay">
-                        <i class="fas fa-play"></i>
-                    </div>
+                    <template>
+                        <div class="autoPlay border-success" @click="autoPlayOn" v-if="autoPlayIsOn == false">
+                            <i class="fas fa-play m-auto"></i>
+                        </div>
 
+                        <div class="autoPlay border-danger" @click="autoPlayOff" v-else>
+                            <i class="fas fa-stop-circle m-auto"></i>
+                        </div>
+                    </template>
                 </div>
             </div>
         </div>
 
-
         <!-- Script js -->
         <script src="assets\main.js" charset="utf-8"></script>
-
     </body>
 </html>

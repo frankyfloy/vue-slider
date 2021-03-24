@@ -32,7 +32,22 @@
 
 .autoPlay{
     position: absolute;
+    z-index: 1;
+    display: flex;
     bottom: 20px;
     right: 30px;
+    height: 30px;
+    width: 30px;
     color: white;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.autoPlay > .fa-play{
+    padding-left: 2px;
+    color: green;
+}
+
+.fa-stop-circle{
+    color: red;
 }

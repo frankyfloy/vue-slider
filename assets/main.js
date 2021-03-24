@@ -11,7 +11,9 @@ var app = new Vue({
             "assets\\img\\salerno6.jpg",
             "assets\\img\\salerno7.jpg",
         ],
-        header: "Salerno"
+        header : "Salerno",
+        autoPlay_Fnct : "",
+        autoPlayIsOn : false,
     },
 
     methods: {
@@ -29,10 +31,27 @@ var app = new Vue({
             }else{
                 this.index = this.a_IMG.length - 1;
             }
-        }
-    }
+        },
 
-    // setTimeout(function (){
-    //
-    // },1200);
+        lineSelected: function(index) {
+            this.index = index;
+        },
+
+        autoPlayOn: function() {
+            this.autoPlayIsOn = true;
+            let lengthArrImg = this.a_IMG.length - 1;
+            this.autoPlay = setInterval(function (){
+                if (this.index == lengthArrImg) {
+                    this.index = 0;
+                }else {
+                    this.index += 1;
+                }
+            }.bind(this),1000);
+        },
+
+        autoPlayOff: function() {
+            this.autoPlayIsOn = false;
+            clearInterval(this.autoPlay);
+        },
+    }
 });
