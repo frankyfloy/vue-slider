@@ -24,8 +24,11 @@
     </head>
     <body>
         <div id="root">
-            <div class="container">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="container-fluid">
+                <div class="">
+                    <h1 id="header"> {{header}} </h1>
+                </div>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
                     <a @click="prev" class="carousel-control-prev" role="button">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -46,6 +49,10 @@
                         :class="(lineNavImg -1 == index) ? 'active' : '' "
                         @click="dotSelection(dot - 1)"></li>
                     </ol>
+
+                    <div class="autoPlay">
+                        <i class="fas fa-play"></i>
+                    </div>
 
                 </div>
             </div>

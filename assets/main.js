@@ -10,7 +10,8 @@ var app = new Vue({
             "assets\\img\\salerno5.jpg",
             "assets\\img\\salerno6.jpg",
             "assets\\img\\salerno7.jpg",
-        ]
+        ],
+        header: "Salerno"
     },
 
     methods: {
